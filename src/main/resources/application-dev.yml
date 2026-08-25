@@ -1,0 +1,3 @@
+app:
+  sandbox:
+    stream-delay: 50m # Fast streams for developer quick testing
