@@ -1,3 +1,14 @@
 spring:
   application:
     name: reactive-sandbox
+
+  sql:
+    init:
+      mode: always # Forces schema.sql to execute on start
+  r2dbc:
+    url: r2dbc:h2:mem:///testdb;DC_DELAY=-1;
+
+app:
+  sandbox:
+    stream-delay-ms: 500 # Default delay for streaming elements
+    max-buffer-size: 1000
