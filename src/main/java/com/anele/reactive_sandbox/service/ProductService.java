@@ -23,8 +23,9 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public Flux<Product> streamProductByCategory(String category) {
+    public Flux<Product> streamProductsByCategory(String category) {
         return productRepository.findByCategory(category)
+                // Applies the dynamic timeout delay resolved by the active profile
                 .delayElements(Duration.ofMillis(sandboxProperties.getStreamDelayMs()));
     }
 
