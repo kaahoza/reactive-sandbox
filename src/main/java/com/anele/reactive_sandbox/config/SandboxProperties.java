@@ -12,14 +12,14 @@ import org.springframework.validation.annotation.Validated;
 public class SandboxProperties {
 
     @Min(10) // Fails application startup if the delay parameter is configured under 10ms
-    Long streamDelay;
+    Long streamDelayMs;
     int maxBufferSize;
 
-    public Long getStreamDelay() {
-        return streamDelay;
+    public Long getStreamDelayMs() {
+        return streamDelayMs;
     }
-    public void setStreamDelay(Long streamDelay) {
-        this.streamDelay = streamDelay;
+    public void setStreamDelayMs(Long streamDelayMs) {
+        this.streamDelayMs = streamDelayMs;
     }
     public int getMaxBufferSize() {
         return maxBufferSize;
