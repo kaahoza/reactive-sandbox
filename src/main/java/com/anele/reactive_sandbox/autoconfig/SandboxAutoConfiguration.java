@@ -4,11 +4,12 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.reactive.config.EnableWebFlux;
 
 import java.beans.BeanProperty;
 
 @AutoConfiguration
-@ConditionalOnClass(name = "org.springframework.web.reactive.FieldError") // Only activates if WebFlux library is running
+@ConditionalOnClass(EnableWebFlux.class)
 public class SandboxAutoConfiguration {
 
     @Bean
